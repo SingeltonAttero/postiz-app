@@ -11,7 +11,11 @@ import { SocialAbstract } from '@gitroom/nestjs-libraries/integrations/social.ab
 import mime from 'mime';
 import TelegramBot from 'node-telegram-bot-api';
 import { Integration } from '@prisma/client';
-import striptags from 'striptags';
+import {
+  formatTelegramHtml,
+  sendRichPhoto,
+  RichMessageBot,
+} from './telegram.format';
 
 const telegramBot = new TelegramBot(process.env.TELEGRAM_TOKEN!);
 // Added to support local storage posting
@@ -175,13 +179,23 @@ export class TelegramProvider extends SocialAbstract implements SocialProvider {
   ): Promise<number | null> {
     let messageId: number | null = null;
     const mediaFiles = message.media || [];
-    const text = striptags(message.message || '', ['u', 'strong', 'p'])
-      .replace(/<strong>/g, '<b>')
-      .replace(/<\/strong>/g, '</b>')
-      .replace(/<p>(.*?)<\/p>/g, '$1\n');
-
-    console.log(text);
+    const formatted = formatTelegramHtml(message.message || '');
+    const text = formatted.html;
     const processedMedia = this.processMedia(mediaFiles);
+
+    if (
+      processedMedia.length === 1 &&
+      processedMedia[0].type === 'photo' &&
+      formatted.visible.length > 1024
+    ) {
+      return sendRichPhoto(
+        telegramBot as unknown as RichMessageBot,
+        accessToken,
+        processedMedia[0],
+        formatted,
+        replyToMessageId
+      );
+    }
 
     // if there's no media, bot sends a text message only
     if (processedMedia.length === 0) {
@@ -289,7 +303,11 @@ export class TelegramProvider extends SocialAbstract implements SocialProvider {
     const [commentPost] = postDetails;
     const replyToId = Number(lastCommentId || postId);
 
-    const messageId = await this.sendMessage(accessToken, commentPost, replyToId);
+    const messageId = await this.sendMessage(
+      accessToken,
+      commentPost,
+      replyToId
+    );
 
     if (messageId) {
       return [

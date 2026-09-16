@@ -2,6 +2,7 @@ import DOMPurify from 'isomorphic-dompurify';
 
 const ALLOWED_TAGS = [
   'p',
+  'blockquote',
   'br',
   'strong',
   'u',
