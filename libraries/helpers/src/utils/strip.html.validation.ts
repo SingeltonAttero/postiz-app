@@ -162,17 +162,13 @@ export const stripHtmlValidation = (
       'h1',
       'h2',
       'h3',
+      'br',
+      'blockquote',
       'p',
       'strong',
       'u',
       'a',
-    ])
-      .replace(/&gt;/gi, '>')
-      .replace(/&lt;/gi, '<')
-      .replace(/&amp;/gi, '&')
-      .replace(/&nbsp;/gi, ' ')
-      .replace(/&quot;/gi, '"')
-      .replace(/&#39;/gi, "'");
+    ]);
   }
 
   if (type === 'markdown') {

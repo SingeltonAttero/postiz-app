@@ -44,6 +44,7 @@ import Document from '@tiptap/extension-document';
 import Bold from '@tiptap/extension-bold';
 import Text from '@tiptap/extension-text';
 import Paragraph from '@tiptap/extension-paragraph';
+import { PostBlockquote, PostHardBreak } from './editor.formatting';
 import Underline from '@tiptap/extension-underline';
 import { stripHtmlValidation } from '@gitroom/helpers/utils/strip.html.validation';
 import { History } from '@tiptap/extension-history';
@@ -908,6 +909,7 @@ export const OnlyEditor = forwardRef<
     extensions: [
       Document,
       Paragraph,
+      ...(editorType === 'html' ? [PostBlockquote, PostHardBreak] : []),
       Text,
       Underline,
       Bold,
