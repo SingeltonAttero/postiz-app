@@ -1,141 +1,67 @@
-<p align="center">
-  <a href="https://postiz.com/" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/765e9d72-3ee7-4a56-9d59-a2c9befe2311">
-    <img alt="Postiz Logo" src="https://github.com/user-attachments/assets/f0d30d70-dddb-4142-8876-e9aa6ed1cb99" width="280"/>
-  </picture>
-  </a>
-</p>
+# SenderPostSys
 
-<p align="center">
-<a href="https://opensource.org/license/agpl-v3">
-  <img src="https://img.shields.io/badge/License-AGPL%203.0-blue.svg" alt="License">
-</a>
-</p>
+Мой продукт SenderPostSys развивается как форк [Postiz](https://github.com/gitroomhq/postiz-app) для подготовки и выпуска контента. Начинаю с личного рабочего процесса и Telegram: от читаемого черновика до публикации с сохранением оформления.
 
-<h3 align="center"><strong><a href="https://github.com/gitroomhq/postiz-agent">NEW: check out Postiz agent CLI! perfect for OpenClaw and other agents</a></strong></h3>
-<div align="center">
-  <strong>
-  <h2>Your ultimate AI social media scheduling tool</h2><br />
-  <a href="https://postiz.com">Postiz</a>: An alternative to: Buffer.com, Hypefury, Twitter Hunter, etc...<br /><br />
-  </strong>
-  Postiz offers everything you need to manage your social media posts,<br />build an audience, capture leads, and grow your business.
-</div>
+Владелец и автор развития форка: **Яков Вебер · [SingeltonAttero](https://github.com/SingeltonAttero)**. Это самостоятельный форк, не официальный сервис Postiz.
 
-<div class="flex" align="center">
-  <br />
-  <img alt="Instagram" src="https://postiz.com/svgs/socials/Instagram.svg" width="32">
-  <img alt="Youtube" src="https://postiz.com/svgs/socials/Youtube.svg" width="32">
-  <img alt="Dribbble" src="https://postiz.com/svgs/socials/Dribbble.svg" width="32">
-  <img alt="Linkedin" src="https://postiz.com/svgs/socials/Linkedin.svg" width="32">
-  <img alt="Reddit" src="https://postiz.com/svgs/socials/Reddit.svg" width="32">
-  <img alt="TikTok" src="https://postiz.com/svgs/socials/TikTok.svg" width="32">
-  <img alt="Facebook" src="https://postiz.com/svgs/socials/Facebook.svg" width="32">
-  <img alt="Pinterest" src="https://postiz.com/svgs/socials/Pinterest.svg" width="32">
-  <img alt="Threads" src="https://postiz.com/svgs/socials/Threads.svg" width="32">
-  <img alt="X" src="https://postiz.com/svgs/socials/X.svg" width="32">
-  <img alt="Slack" src="https://postiz.com/svgs/socials/Slack.svg" width="32">
-  <img alt="Discord" src="https://postiz.com/svgs/socials/Discord.svg" width="32">
-  <img alt="Mastodon" src="https://postiz.com/svgs/socials/Mastodon.svg" width="32">
-  <img alt="Bluesky" src="https://postiz.com/svgs/socials/Bluesky.svg" width="32">
-</div>
+## Зачем мне этот продукт
 
-<p align="center">
-  <br />
-  <a href="https://docs.postiz.com" rel="dofollow"><strong>Explore the docs »</strong></a>
-  <br />
+Мне нужен понятный процесс: написать пост, прочитать его с картинкой и оформлением, внести правки, затем отправить в календарь или опубликовать. Текст должен доходить до читателя с выбранными ссылками, цитатами и интервалами. Решение о публикации остаётся за автором.
 
-  <br />
-  <a href="https://youtube.com/@postizofficial" rel="dofollow"><strong>Watch the YouTube Tutorials»</strong></a>
-  <br />
-</p>
+Postiz даёт основу: редактор, медиабиблиотеку, календарь, очередь публикаций и интеграции. В этом репозитории живут исходники продукта, проверки, сборка и история доработок. Посты и другие материалы автора хранятся отдельно.
 
-<p align="center">
-  <a href="https://platform.postiz.com">Register</a>
-  ·
-  <a href="https://discord.postiz.com">Join Our Discord (devs only)</a>
-  ·
-  <a href="https://docs.postiz.com/public-api">Public API</a><br />
-</p>
-<p align="center">
-  <a href="https://www.npmjs.com/package/@postiz/node">NodeJS SDK</a>
-  ·
-  <a href="https://www.npmjs.com/package/n8n-nodes-postiz">N8N custom node</a>
-  ·
-  <a href="https://apps.make.com/postiz">Make.com integration</a>
-</p>
+## Рабочий процесс
 
-<br /><br />
+Сейчас этот порядок используется при ведении личного канала. Он задаёт требования к дальнейшей автоматизации продукта.
 
-## 🔌 See the leading Postiz features
+1. **Черновик.** Один Markdown-файл с текстом и уже читаемым оформлением. Картинка встроена в пост ссылкой; сам медиафайл хранится отдельно.
+2. **Правки автора.** Актуальный Markdown является источником для выгрузки. Ручные изменения текста и оформления должны сохраняться.
+3. **Выгрузка.** После команды автора материал передаётся в систему. Сохранение черновика, назначение времени и немедленная публикация являются отдельными действиями.
+4. **Проверка результата.** Сохранение в редакторе и фактическая публикация подтверждаются отдельно.
+5. **История.** После подтверждённого выхода прежние версии и промежуточные материалы уходят в архив.
 
-<p align="center">
-  <a href="https://www.youtube.com/watch?v=BdsCVvEYgHU" target="_blank">
-    <img alt="Postiz" src="https://github.com/user-attachments/assets/8b9b7939-da1a-4be5-95be-42c6fce772de" />
-  </a>
-</p>
+## Собственные доработки
 
-## ✨ Features
+Первый набор изменений переносит исправления Telegram из файлов установленного сервиса в исходники:
 
-| ![Image 1](https://github.com/user-attachments/assets/a27ee220-beb7-4c7e-8c1b-2c44301f82ef) | ![Image 2](https://github.com/user-attachments/assets/eb5f5f15-ed90-47fc-811c-03ccba6fa8a2) |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| ![Image 3](https://github.com/user-attachments/assets/d51786ee-ddd8-4ef8-8138-5192e9cfe7c3) | ![Image 4](https://github.com/user-attachments/assets/91f83c89-22f6-43d6-b7aa-d2d3378289fb) |
+- Сохраняются ссылки внутри слов, выделения, цитаты и переносы строк.
+- Редактор поддерживает цитаты и мягкие переносы.
+- Одна фотография с длинным текстом отправляется одним Rich Message: сначала изображение, затем текст.
+- HTML проходит очистку и подготовку к отправке без потери нужной разметки; буквальный текст вроде `<widget>` остаётся текстом.
+- Полный текст отправляемого поста больше не выводится в консоль.
 
-### Our Sponsors
+Состав изменений, ограничения и результаты проверки: [FORK.md](FORK.md). Начальная база доработок: **Postiz v2.23.0**. Успешно пройдены 26 проверок и сборки backend, orchestrator и frontend на зависимостях этой версии. Проверки не отправляют сообщения в Telegram.
 
-| Sponsor |                                  Logo                                   | Description     |
-|---------|:-----------------------------------------------------------------------:|-----------------|
-| [Hostinger](https://www.hostinger.com/vps/docker/postiz?ref=postiz) | <img src=".github/sponsors/hostinger.png" alt="Hostinger" width="500"/> | Hostinger is on a mission to make online success possible for anyone – from developers to aspiring bloggers and business owners |
-| [Virlo](https://dev.virlo.ai/?ref=postiz) | <img src="https://github.com/user-attachments/assets/25182598-5344-45fc-b9cd-e4cfa16aabfd" alt="Virlo" width="500"/> | Virlo is the #1 social media trend spotting and all-in-one GTM tool for teams leveraging short-form video |
-| [ChatbotX](https://chatbotx.io/?ref=postiz) | <img src="https://github.com/user-attachments/assets/0aa6b058-9a64-46d3-bc26-337abc51737d" alt="ChatbotX" width="500"/> | The ManyChat alternative that you can self-host, white-label, and resell to your clients. Bring your own OpenClaw, Hermes, or Claude agents! |
+## Разработка и сборка
 
-![Bronze Tier](https://opencollective.com/postiz/tiers/main-repository-bronze-tier.svg?avatarHeight=36&width=600&button=false)
+Стек: TypeScript, Next.js, NestJS, Prisma/PostgreSQL и Temporal. Для текущей сборки используются **Node.js 22.20** и **pnpm 10.6.1**.
 
-# Intro
+```sh
+pnpm install --frozen-lockfile
+pnpm run test:telegram
+pnpm run build
+```
 
-- Schedule all your social media posts (many AI features)
-- Measure your work with analytics.
-- Collaborate with other team members to exchange or buy posts.
-- Invite your team members to collaborate, comment, and schedule posts.
-- At the moment, there is no difference between the hosted version and the self-hosted version
-- Perfect for automation (API) with platforms like N8N, Make.com, Zapier, etc.
+Настройка инфраструктуры и интеграций описана в [документации Postiz](https://docs.postiz.com/quickstart). Особенности сборки этого форка и перехода на собственный Docker-образ: [FORK.md](FORK.md#installation-transition).
 
-## Tech Stack
+Ключи, токены, база данных, пользовательские публикации и настройки рабочей установки не входят в репозиторий.
 
-- Pnpm workspaces (Monorepo)
-- NextJS (React)
-- NestJS
-- Prisma (Default to PostgreSQL)
-- Temporal
-- Resend (email notifications)
+## Как будет развиваться форк
 
-## Quick Start
+Ближайший этап: проверить PR на актуальной целевой ветке, собрать собственный образ с версией и перевести установку на него. После этого развиваем продукт отдельными задачами.
 
-To have the project up and running, please follow the [Quick Start Guide](https://docs.postiz.com/quickstart)
+Каждая доработка начинается с конкретной проблемы и ожидаемого результата. Реализация проходит через отдельную ветку и PR с подходящей проверкой. Изменение кода, выпуск образа и обновление рабочей установки фиксируются отдельно. Обновления исходного Postiz переносим осознанно, с проверкой собственных изменений.
 
-## Sponsor Postiz
+Оформление SenderPostSys и дальнейший набор функций уточняются в этих задачах. Унаследованный [CONTRIBUTING.md](CONTRIBUTING.md) описывает требования к участию в исходном проекте Postiz; развитие этого форка организует его владелец.
 
-We now give a few options to Sponsor Postiz:
-- Just a donation: You like what we are building, and want to buy us some coffee so we can build faster.
-- Main repository: Get your logo with a backlink from the main Postiz repository. Postiz has over 7M downloads and 20k views per month.
+## Лицензия и происхождение
 
-Link: https://opencollective.com/postiz
+Основа проекта создана командой и участниками [Postiz](https://github.com/gitroomhq/postiz-app). Их авторство, применимые уведомления и лицензии сохраняются. Форк изменён для описанного выше рабочего процесса; начальные изменения датированы **16 сентября 2026 года**.
 
-## Postiz Compliance
+Код форка распространяется по [GNU AGPL-3.0](LICENSE). Она допускает коммерческое использование, изменение программы и платные услуги при соблюдении её условий. Для модифицированного сетевого сервиса раздел 13 требует заметно предложить всем взаимодействующим с ним пользователям бесплатный доступ к полному соответствующему исходному коду работающей версии. При передаче программы также действуют требования разделов 4–6. Права пользователей на изменение и распространение кода сохраняются.
 
-- Postiz is an open-source, self-hosted social media scheduling tool that supports platforms like X (formerly Twitter), Bluesky, Mastodon, Discord, and others.
-- Postiz hosted service uses official, platform-approved OAuth flows.
-- Postiz does not automate or scrape content from social media platforms.
-- Postiz does not collect, store, or proxy API keys or access tokens from users.
-- Postiz never asks users to paste API keys into our hosted product.
-- Postiz users always authenticate directly with the social platform (e.g., X, Discord, etc.), ensuring platform compliance and data privacy.
+При выпуске сервиса нужно связать версию образа с исходниками, необходимыми файлами сборки и установки и добавить в интерфейс доступ к ним. Наличие публичного форка само по себе не подтверждает выполнение всех этих условий. Программа предоставляется без гарантий в пределах, установленных лицензией.
 
-## License
+Своё название и оформление продукта развиваются отдельно. AGPL не даёт права представляться официальным Postiz или использовать чужие товарные знаки без соответствующих прав. Условия облачного сервиса Postiz и доступ к его инфраструктуре также не переносятся вместе с исходниками: [разделы 7–10 условий Postiz](https://postiz.com/terms-of-service).
 
-This repository's source code is available under the [AGPL-3.0 license](LICENSE).
-
-<br /><br />
-
-<p align="center">
-  <img src="https://github.com/snyk-labs/secure-developer-sample-repo/raw/main/badge_full.svg" alt="Secure Developer Badge Full" width="150">
-</p>
+Исходники, предлагаемые пользователям, должны соответствовать запущенному выпуску. Пользовательские посты, данные и секреты не становятся открытыми только из-за лицензии программы.
